@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!--Includes-->
+  <head>
+    <!-- Bootstrap Basic Template -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Arimo|Courgette" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Reem+Kufi|Rochester|Rouge+Script" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/explore.css">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110163522-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-110163522-1');
+    </script>
+  </head>
+
+  <body ng-app="explore">
+
+    <div id="bg-cover"></div>
+
+    <!-- Nav Bar -------------------------------------------------->
+    <nav class="nav navbar-default navbar-fixed-top">
+      <div id="explore_head" class="container">
+
+        <ul class="pull-left">
+          <li><a href="index.html"><img id="back_button" src="images/back.png"></a></li>
+        </ul>
+
+        <ul class="text-center">
+
+          <script>
+            document.write(localStorage.selected_year);
+          </script>
+        </ul>
+
+        <ul class="pull-right">
+          <li><a href="settings.html"><img id="settings_button" src="images/settings_gear.png"></a></li>
+        </ul>
+
+        
+
+      </div>
+    </nav>
+    <!-- End Nav Bar -------------------------------------------------->
+
+    <!-- Recommender Container -------------------------------------------------->
+    <div class="container" ng-controller="DivHider">
+      <div id="blank"> </div>
+      <!-- Music Recommender -------------------------------------------------->
+      <div id="music_wrapper" class="panel panel-default hide" ng-show="checkSettings('music')">
+        <div class="panel-heading", id="music-rec">
+          <h2>Music</h2>
+          <!-- We can put various options up here --->
+        </div>
+
+        <div class="panel-body", id="music-panel">
+          <div class="content_wrapper" id="dynamicheight">
+
+            <!--content 1-->
+            <div class="content_box" id="music_content_1">
+              <a id="music_link1" ><img id="music_thumbnail1" class="content_thumbnail" src="images/Filler.jpg" onClick="onCatClick('music', $(this).attr('src'))"></a>
+            </div>
+
+            <!--content 2-->
+            <div class="content_box" id="music_content_2">
+              <a id="music_link2" ><img id="music_thumbnail2" class="content_thumbnail" src="images/Filler.jpg" onClick="onCatClick('music', $(this).attr('src'))"></a>
+            </div>
+
+            <!--content 3-->
+            <div class="content_box" id="music_content_3">
+              <a id="music_link3" ><img id="music_thumbnail3" class="content_thumbnail" src="images/Filler.jpg" onClick="onCatClick('music', $(this).attr('src'))"></a>
+            </div>
+
+            <!--content 4-->
+            <div class="content_box" id="music_content_4">
+              <a id="music_link4" ><img id="music_thumbnail4" class="content_thumbnail" src="images/Filler.jpg" onClick="onCatClick('music', $(this).attr('src'))"></a>
+            </div>
+
+            <!--refresh button-->
+            <div class="refresh_box" id="music_refresh">
+              <a onclick="set_prev('explore'); fill_section('music');">
+                <img class="refresh_thumbnail" src="images/Refresh.png" onmouseover="" style="cursor: pointer;">
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- End Music Recommender -------------------------------------------------->
+
+      <!-- Shows Recommender -------------------------------------------------->
+      <div id="shows_wrapper" class="panel panel-default hide" ng-show="checkSettings('shows')">
+        <div class="panel-heading", id="shows-rec">
+          <h2>Shows</h2>
+          <!-- We can put various options up here --->
+        </div>
+
+        <div class="panel-body", id="shows-panel">
+          <div class="content_wrapper" id="dynamicheight">
+
+            <!--content 1-->
+            <div class="content_box" id="shows_content_1">
+              <a id="shows_link1" ><img id="shows_thumbnail1" class="content_thumbnail" src="images/Filler.jpg" onClick="onCatClick('shows', $(this).attr('src'))"></a>
+            </div>
+
+            <!--content 2-->
+            <div class="content_box" id="shows_content_2">
+              <a id="shows_link2" ><img id="shows_thumbnail2" class="content_thumbnail" src="images/Filler.jpg" onClick="onCatClick('shows', $(this).attr('src'))"></a>
+            </div>
+
+            <!--content 3-->
+            <div class="content_box" id="shows_content_3">
+              <a id="shows_link3" ><img id="shows_thumbnail3" class="content_thumbnail" src="images/Filler.jpg" onClick="onCatClick('shows', $(this).attr('src'))"></a>
+            </div>
+
+            <!--content 4-->
+            <div class="content_box" id="shows_content_4">
+              <a id="shows_link4" ><img id="shows_thumbnail4" class="content_thumbnail" src="images/Filler.jpg" onClick="onCatClick('shows', $(this).attr('src'))"></a>
+            </div>
+
+            <!--refresh button-->
+            <div class="refresh_box" id="shows_refresh">
+              <a onclick="set_prev('explore'); fill_section('shows');">
+                <img class="refresh_thumbnail" src="images/Refresh.png" onmouseover="" style="cursor: pointer;">
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- End Shows Recommender -------------------------------------------------->
+
+      <!-- Movie Recommender -------------------------------------------------->
+      <div id="movies_wrapper" class="panel panel-default hide" ng-show="checkSettings('movies')">
+        <div class="panel-heading", id="movie-rec">
+          <h2>Movies</h2>
+          <!-- We can put various options up here --->
+        </div>
+
+        <div class="panel-body", id="movie-panel">
+          <div class="content_wrapper" id="dynamicheight">
+
+            <!--content 1-->
+            <div class="content_box" id="movies_content_1">
+              <a id="movies_link1" ><img id="movies_thumbnail1" class="content_thumbnail" src="images/Filler.jpg" onClick="onCatClick('movies', $(this).attr('src'))"></a>
+            </div>
+
+            <!--content 2-->
+            <div class="content_box" id="movies_content_2">
+              <a id="movies_link2"><img id="movies_thumbnail2" class="content_thumbnail" src="images/Filler.jpg" onClick="onCatClick('movies', $(this).attr('src'))"></a>
+            </div>
+
+            <!--content 3-->
+            <div class="content_box" id="movies_content_3">
+              <a id="movies_link3" ><img id="movies_thumbnail3" class="content_thumbnail" src="images/Filler.jpg" onClick="onCatClick('movies', $(this).attr('src'))"></a>
+            </div>
+
+            <!--content 4-->
+            <div class="content_box" id="movies_content_4">
+              <a id="movies_link4" ><img id="movies_thumbnail4" class="content_thumbnail" src="images/Filler.jpg" onClick="onCatClick('movies', $(this).attr('src'))"></a>
+            </div>
+
+            <!--refresh button-->
+            <div class="refresh_box" id="movies_refresh">
+              <a onclick="set_prev('explore'); fill_section('movies');">
+                <img class="refresh_thumbnail" src="images/Refresh.png" onmouseover="" style="cursor: pointer;">
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- End Movie Recommender -------------------------------------------------->
+
+      <!-- Personal Recommender -------------------------------------------------->
+      <div id="personal_wrapper" class="panel panel-default hide">
+        <div class="panel-heading", id="personal-rec">
+          <h2>Personal Memories</h2>
+          <!-- We can put various options up here --->
+        </div>
+
+        <div class="panel-body", id="personal-panel">
+          <div class="content_wrapper" id="dynamicheight">
+
+            <!--content 1-->
+            <div class="content_box" id="personal_content_1">
+              <a id="personal_link1" ><img id="personal_thumbnail1" class="content_thumbnail" src="images/nostalgia0.jpg" onClick="onCatClickPersonal(0, 'personal', $(this).attr('src'))"></a>
+            </div>
+
+            <!--content 2-->
+            <div class="content_box" id="personal_content_2">
+              <a id="personal_link2"><img id="personal_thumbnail2" class="content_thumbnail" src="images/nostalgia1.jpg" onClick="onCatClickPersonal(1, 'personal', $(this).attr('src'))"></a>
+            </div>
+
+            <!--content 3-->
+            <div class="content_box" id="personal_content_3">
+              <a id="personal_link3" ><img id="personal_thumbnail3" class="content_thumbnail" src="images/nostalgia2.jpg" onClick="onCatClickPersonal(2, 'personal', $(this).attr('src'))"></a>
+            </div>
+
+            <!--content 4-->
+            <div class="content_box" id="personal_content_4">
+              <a id="personal_link4" ><img id="personal_thumbnail4" class="content_thumbnail" src="images/nostalgia3.jpg" onClick="onCatClickPersonal(3, 'personal', $(this).attr('src'))"></a>
+            </div>
+
+            <!--refresh button-->
+            <div class="refresh_box" id="personal_refresh">
+              <a onclick="set_prev('explore'); fill_personal_section();">
+                <img class="refresh_thumbnail" src="images/Refresh.png" onmouseover="" style="cursor: pointer;">
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- End Personal Recommender -------------------------------------------------->
+
+    </div>
+    <!-- End Recommender Container -------------------------------------------------->
+
+    <!--javascript-->
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/database.js"></script>
+    <script src="js/displays.js"></script>
+    <script src="js/explore.js"></script>
+    <script src="js/explore_angular.js"></script>
+
+  </body>
+</html>
+
+<!------------- OLD CODE ----------->
+
+<!-- News Recommender -------------------------------------------------- >
+<div id="news_wrapper" class="panel panel-default" ng-show="false">
+<div class="panel-heading", id="news-rec">
+<h2>News</h2>
+<!-- We can put various options up here --- >
+</div>
+
+<div class="panel-body", id="news-panel">
+<div class="content_wrapper" id="dynamicheight">
+
+<!--content 1-- >
+<div class="content_box" id="news_content_1">
+<a id="news_link1" href="closeup.html"><img id="news_thumbnail1" class="content_thumbnail" src="images/Filler.jpg"></a>
+</div>
+
+<!--content 2-- >
+<div class="content_box" id="news_content_2">
+<a id="news_link2" href="closeup.html"><img id="news_thumbnail2" class="content_thumbnail" src="images/Filler.jpg"></a>
+</div>
+
+<!--content 3-- >
+<div class="content_box" id="news_content_3">
+<a id="news_link3" href="closeup.html"><img id="news_thumbnail3" class="content_thumbnail" src="images/Filler.jpg"></a>
+</div>
+
+<!--content 4-- >
+<div class="content_box" id="news_content_4">
+<a id="news_link4" href="closeup.html"><img id="news_thumbnail4" class="content_thumbnail" src="images/Filler.jpg" ></a>
+</div>
+
+<!--refresh button-- >
+<div class="refresh_box" id="news_refresh">
+<a id="news_link1" onclick="set_prev(); fill_section('news');">
+<img class="refresh_thumbnail" src="images/Refresh.png" onmouseover="" style="cursor: pointer;">
+</a>
+</div>
+
+</div>
+</div>
+</div>
+<!-- End News Recommender -------------------------------------------------->
+<!--
+<script>
+document.write("<li><a href=\"index.html\">" + localStorage.selected_year + "</a></li>");
+</script>
+-->

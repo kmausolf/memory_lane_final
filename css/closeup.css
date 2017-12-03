@@ -1,0 +1,119 @@
+
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 110vh;
+  background-image: url("../images/background.jpg");
+  filter: opacity(.5);
+  background-position: 0% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.navbar-default {
+  background-color: rgba(255, 255, 255, .5);
+}
+
+#explore_head {
+  background-color: rgba(255, 255, 255, .7);
+  padding-top: 6%;
+  width: -webkit-fill-available;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3%;
+}
+
+.nav #back_button {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 5vw;
+  z-index: 1;
+}
+
+.pull-left {
+  margin-right: -50%;
+}
+
+.nav .text-center{
+  color: #464646;
+  font-weight: bold;
+  font-size: 44px;
+  font-family: 'Rochester', sans-serif;
+  margin-btop: -3px;
+}
+
+li {
+  list-style: none; 
+}
+
+body{
+  padding-top: 75px;
+}
+
+.jumbotron {
+  margin-top: 6vh;
+  background-color: rgba(0,0,0,0);
+}
+
+.panel {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+#more_info {
+  width: 88vw;
+  background-color: #008CBA;
+  font-family: "Reem Kufi", cursive;
+  color: black;
+  border-radius: 8px;
+}
+
+#moreinfo {
+  font-size: 3vh;
+  font-family: "Reem Kufi", cursive;
+  -webkit-text-stroke-width: medium;
+  -webkit-text-stroke-color: #363636;
+  color: #363636;
+}
+
+.panel-title {
+  color: black;
+  font-size: 26px;
+  text-align: center;
+}
+
+.thumbnail img{
+  max-height: 30%;
+  max-width: 30%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* old code */
+/*
+.nav a{
+color: #7c645b;
+font-size: 28px;
+font-weight: bold;
+padding: 14px 10px;
+font-family: 'Courgette', sans-serif;
+}
+
+.nav li{
+display: inline;
+}
+
+.nav img{
+width: 28px;
+height: 28px;
+border: 0;
+}
+*/

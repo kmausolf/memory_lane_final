@@ -1,0 +1,93 @@
+
+/********** body **********/
+body {
+  background-image:url("../images/background.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/********** nav bar **********/
+
+.navbar-default {
+  background-color: rgba(248, 248, 248, .5);
+}
+
+#settings_head {
+  background-color: rgba(255, 255, 255, .5);
+  padding-top: 6%;
+  width: -webkit-fill-available;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3%;
+}
+
+.nav #back_button {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 5vw;
+  z-index: 1;
+}
+
+.pull-left {
+  margin-right: -50%; 
+}
+
+.nav .text-center {
+  color: #464646;
+  font-weight: bold;
+  font-size: 44px;
+  font-family: 'Rochester', sans-serif;
+  position: relative;
+  margin-top: 5px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/********** body **********/
+
+.jumbotron {
+  background-color: rgba(255, 255, 255, .8);
+  background-size: cover;
+  block-size: 100vh;
+}
+
+.jumbotron .container {
+  position: relative;
+  top: 100px;
+}
+
+.container div {
+  display: flex;
+  flex-direction: column;
+}
+
+.jumbotron h1 {
+  color: #000;
+  font-size: 6vh;
+  margin-top: 5%;
+  font-family: 'Reem Kufi', cursive;
+}
+
+.settings {
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  margin-top: 1vh;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Reem Kufi", cursive;
+  font-size: 4vh;
+  border-radius: 8px;
+  width: 70%;
+}
+
+#add_personal_button {
+  width: 80vw;
+  background-color: #008CBA;
+}

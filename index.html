@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+  <!--Includes-->
+  <head>
+    <!-- Bootstrap Basic Template -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Arimo|Courgette" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- login script -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="Stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Reem+Kufi|Rochester|Rouge+Script" rel="stylesheet">
+    <!-- Original stylesheet -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110163522-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-110163522-1');
+    </script>
+  </head>
+
+  <body>
+    <!-- Nav Bar ------------------------>
+    <nav class="nav navbar-default navbar-fixed-top" action="javascript:;" >
+      <div class="container">
+        <ul class="pull-left">
+        </ul>
+        <ul class="pull-right">
+          
+          <li data-login-item class="login-item">
+            <button data-login-button id="login_button" class="modalButton btn btn-info" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" >Login</button>
+          </li>
+          
+          <li data-logout-item class="logout-item hidden">
+            <button data-logout-button id="logout_button" class="modalButton btn btn-secondary btn-lg btn-block" type="button">Logout</button>
+          </li>
+        </ul>"
+      </div>
+      <!-- Login Modal from https://bootsnipp.com/snippets/featured/easy-log-in-form  -------------------->
+      <!-- collapsible elements -->
+
+
+      <!-- old login form 
+<form>
+
+<!-- email id --
+<div class="form-group" id="email_div">
+<input class="form-control" id="login_email" type="email" placeholder="Email">
+</div>
+
+<!-- password --
+<div class="form-group" id="password_div">
+<input class="form-control" id="login_password" type="password" placeholder="Password">
+</div>
+
+<!-- login/logout buttons --
+<div>
+<button id="login_button" class="btn btn-action" type="button">Log In</button>
+<button id="logout_button" class="btn btn-action hide" type="button">Log Out</button>
+<button id="signup_button" class="btn btn-secondary" type="button">Sign Up</button>
+</div>
+
+</form>
+
+<!---end old login form -------------------------------->
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close" data-dismiss="modal">&times;</span>
+          <section id="login-modal">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-wrap" id="login_form">
+                    <h1>Log in with your email account</h1>
+                    <form role="form" method="post" id="login_form" autocomplete="on">
+
+                      <div class="form-group">
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" name="email" id="login_email" class="form-control" placeholder="somebody@example.com">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="key" class="sr-only">Password</label>
+                        <input type="password" name="key" id="login_password" class="form-control" placeholder="Password">
+                      </div>
+
+                      <div class="checkbox">
+                        <span class="character-checkbox" onclick="showPassword()"></span>
+                        <span class="label">Show password</span>
+                      </div>
+
+                      <input type="button" id="login_action" class="btn btn-action btn-lg btn-block" value="Log in">
+
+                      <input type="button" id="signup_action" class="btn btn-secondary btn-lg btn-block" value="Sign Up">
+
+                    </form>
+                    <hr>
+                  </div>
+                </div> <!-- /.col-xs-12 -->
+              </div> <!-- /.row -->
+            </div> <!-- /.container -->
+          </section>
+
+          <div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                  </button>
+                  <h4 class="modal-title">Recovery password</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Type your email account</p>
+                  <input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-custom">Recovery</button>
+                </div>
+              </div> <!-- /.modal-content -->
+            </div> <!-- /.modal-dialog -->
+          </div> <!-- /.modal -->
+        </div>
+      </div>
+      <!-- End of Login -------------------------->
+    </nav>
+    <!-- End of Nav Bar ------------------------>
+
+
+
+    <!-- Jumbotron ------------------------>
+    <div class="jumbotron">
+      <div id="background"></div>
+      <div class="container">
+        <center ng-app="selecting">
+          <h1><b>Memory Lane</b></h1>
+          <div class="input-group" id="years">
+
+            <div id="thousands" class="set padding-0" ng-controller="CountController as cntCtrl">
+              <button class="set input-group-addon" id="basic-addon1" ng-click="cntCtrl.increaseCount('thousands')"><img src="images/up.png"></button>
+              <span> <p>{{cntCtrl.getValByPlace('thousands')}} </p></span>
+              <button class="input-group-addon" id="basic-addon1" ng-click="cntCtrl.decreaseCount('thousands')"><img src="images/down.png"></button>
+            </div>
+
+            <div id="hundreds" class="set padding-0" ng-controller="CountController as cntCtrl">
+              <button class="input-group-addon" id="basic-addon1" ng-click="cntCtrl.increaseCount('hundreds')"><img src="images/up.png"></button>
+              <span><p> {{cntCtrl.getValByPlace('hundreds')}} </p></span>
+              <button class="input-group-addon" id="basic-addon1" ng-click="cntCtrl.decreaseCount('hundreds')"><img src="images/down.png"></button>
+            </div>
+
+            <div id="tens" class="set padding-0" ng-controller="CountController as cntCtrl">
+              <button class="input-group-addon" id="basic-addon1" ng-click="cntCtrl.increaseCount('tens')"><img src="images/up.png"></button>
+              <span><p> {{cntCtrl.getValByPlace('tens')}} </p></span>
+              <button class="input-group-addon" id="basic-addon1" ng-click="cntCtrl.decreaseCount('tens')"><img src="images/down.png"></button>
+            </div>
+
+            <div id="ones" class="set padding-0" ng-controller="CountController as cntCtrl">
+              <button class="input-group-addon" id="basic-addon1" ng-click="cntCtrl.increaseCount('ones')"><img src="images/up.png"></button>
+              <span><p> {{cntCtrl.getValByPlace('ones')}} </p></span>
+              <button class="input-group-addon" id="basic-addon1" ng-click="cntCtrl.decreaseCount('ones')"><img src="images/down.png"></button>
+            </div>
+
+          </div>
+
+          <!-- GO Button -->
+          <div ng-controller="ExploreController as exCtrl">
+            <button type="button" class="btn btn-default button" id="submit"  ng-click="exCtrl.checkYear()">GO</button>
+          </div>
+        </center>
+      </div>
+    </div>
+    <!-- End of Jumbotron ------------------------>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>

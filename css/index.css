@@ -1,0 +1,284 @@
+body {
+  padding-top: 60px;
+  min-height: 100%;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+    min-height: 100%;
+
+  }
+}
+
+/********** nav bar **********/
+
+.navbar-fixed-top {
+  position: static;
+}
+
+.nav {
+  z-index:0;
+}
+
+.nav a{
+  color: #7c645b;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+
+.nav li{
+  display: inline;
+  font-family: 'Arimo', sans-serif;
+}
+
+/********** login **********/
+
+#login {
+  top: 5px;
+  position: relative;
+  height: 25vh;
+  /*background-color: lightgray;*/
+  /*min-height: 220px;*/
+  /*max-height: 0px;*/
+  z-index: 1;
+}
+
+/*
+#email_div {
+  position: absolute;
+  z-index:2;
+}
+
+#password_div {
+  z-index:2;
+  position: absolute;
+}
+*/
+
+/********** login modal *************/
+.modal {
+  top: 10%;
+  right: 5%;
+  left: 5%;
+}
+
+#login-modal {
+    padding-top: 50px
+}
+#login-modal .form-wrap {
+    width: 60%;
+    margin: 0 auto;
+}
+#login-modal h1 {
+    color: #1fa67b;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+#login-modal .form-group {
+    margin-bottom: 25px;
+}
+#login-modal .checkbox {
+    margin-bottom: 20px;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+#login-modal .checkbox.show:before {
+    content: '\e013';
+    color: #1fa67b;
+    font-size: 17px;
+    margin: 1px 0 0 3px;
+    position: absolute;
+    pointer-events: none;
+    font-family: 'Glyphicons Halflings';
+}
+#login-modal .checkbox .character-checkbox {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    display: inline-block;
+}
+#login-modal .checkbox .label {
+    color: #6d6d6d;
+    font-size: 13px;
+    font-weight: normal;
+}
+#login-modal .btn.btn-action .btn.btn-secondary {
+    font-size: 14px;
+  margin-bottom: 20px;
+}
+#login-modal .forget {
+    font-size: 13px;
+  text-align: center;
+  display: block;
+}
+
+/*    --------------------------------------------------
+  :: Inputs & Buttons
+  -------------------------------------------------- */
+.form-control {
+    color: #212121;
+}
+.btn-action, .btn-secondary {
+  color: #fff;
+  background-color: #1fa67b;
+}
+.btn-custom:hover,
+.btn-custom:focus {
+    color: #fff;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/********** year selection **********/
+
+.jumbotron{
+  /*min-height: 900px;*/
+  min-height: 110vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, .7);
+}
+
+.navbar-default {
+  background-color: rgba(50,50,50,.7);
+}
+
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 110vh;
+  background-image: url("../images/background.jpg");
+  background-position: 0% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+   -o-filter: blur(5px);
+   -ms-filter: blur(5px);
+   filter: blur(5px);
+   z-index: -1;
+}
+
+.jumbotron .container{
+  position: static;
+  left: 0;
+  right: 0;
+  top: 50px;
+  z-index: 0;
+}
+
+.jumbotron h1 {
+  font-size: 65px;
+  font-family: 'Rouge Script', cursive;
+}
+
+
+.set img {
+  height: 3vh;
+}
+
+.set span {
+  height: 16vh;
+}
+
+#years {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  vertical-align: text-top;
+  margin-top: 20px;
+}
+
+.set {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.set p {
+  font-family: "Rochester", cursive;
+  line-height: 100px;
+}
+
+.container button {
+  margin-top: 10%;
+}
+
+.panel {
+  border-radius: 0px;
+}
+
+.padding-0{
+    padding-right:0;
+    padding-left:0;
+}
+
+#years button {
+  width: 30px;
+  justify-content: center;
+  background-color: rgba(0,0,0,0);
+  border-color: rgba(0,0,0,0);
+  margin-left: -25px;
+}
+
+
+.input-group p {
+  font-size: 80px;
+}
+
+/********** GO Button **********/
+
+#submit {
+  background: radial-gradient(#86c677, #427237);
+  border-color: rgba(0,0,0,0);
+  font-size: 60px;
+  color: black;
+  font-family: "Reem Kufi";
+  border: none;
+  padding: 6px;
+  padding-top: 2vh;
+  width: 41vw;
+  border-radius: 23px;
+}
+
+#submit a {
+  color: black;
+}
+
+.thumbnail img{
+  max-height: 30%;
+  max-width: 30%;
+}
+
+.fit {
+  height:100%;
+  width:100%;
+  object-fit:fill;
+}

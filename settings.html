@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+  <!--Includes-->
+  <head>
+    <!-- Bootstrap Basic Template -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Reem+Kufi|Rochester|Rouge+Script" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    <!-- original stylesheet -->
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/personal.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110163522-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-110163522-1');
+    </script>
+  </head>
+
+  <body>
+    <!-- Nav Bar ------------------------>
+    <nav class="nav navbar-default navbar-fixed-top">
+      <div id="settings_head" class="container">
+
+        <ul class="pull-left">
+          <li><a href="explore.html"><img id="back_button" src="images/back.png"></a></li>
+        </ul>
+
+        <ul class="text-center">
+          <li>Settings</li>
+        </ul>
+
+      </div>
+    </nav>
+    <!-- End of Nav Bar ------------------------>
+
+    <!-- Jumbotron ------------------------>
+
+    <div class="jumbotron">
+      <div class="container" ng-app="settings" ng-controller="ButtonCtrl">
+        <center>
+
+          <h1>I want to remember...</h1>
+
+          <div>
+            <button type="button" class="settings" id="music_button" onclick="toggleSetting('music')">Music</button>
+
+            <button type="button" class="settings" id="shows_button" onclick="toggleSetting('shows')">Shows</button>
+
+            <button type="button" class="settings" id="movies_button" onclick="toggleSetting('movies')">Movies</button>
+
+            <button type="button" class="settings" id="personal_button" onclick="toggleSetting('personal')">Personal</button>
+          </div>
+
+          <button type="button" class="settings" id="add_personal_button" onclick="window.location.href='personal.html'">Add Personal Memories</button>
+
+        </center>
+      </div>
+    </div>
+
+
+    <!-- End of Jumbotron ------------------------>
+    <script language="JavaScript"  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/database.js"></script>
+    <!--<script type="text/javascript" src="js/angular.min.js"></script>-->
+    <script type="text/javascript" src="js/settings.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+
+</html>
+
+<!------------- OLD CODE ----------->
+<!--
+<button type="button" class="btn" ng-class="{true: 'btn-success', false: 'btn-default'}[musicActive]" ng-click="toggleActive('music')">Music</button>
+
+<button type="button" class="btn" ng-class="{true: 'btn-success', false: 'btn-default'}[moviesActive]" ng-click="toggleActive('movies')">Movies</button>
+
+<button type="button" class="btn" ng-class="{true: 'btn-success', false: 'btn-default'}[showsActive]" ng-click="toggleActive('shows')">Shows</button>
+-->

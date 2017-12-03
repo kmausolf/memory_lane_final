@@ -1,0 +1,180 @@
+
+/********** body **********/
+body {
+  background-image:url("../images/background.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 100px;
+}
+
+#bg-cover {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(255,255,255,.7);
+  position: fixed;
+  z-index: -100;
+}
+
+/********** nav bar **********/
+
+.navbar-default {
+  background-color: rgba(255, 255, 255, .5);
+}
+
+#explore_head {
+  background-color: rgba(255, 255, 255, .7);
+  padding-top: 6%;
+  width: -webkit-fill-available;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3%;
+}
+
+.nav #back_button {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 5vw;
+  z-index: 1;
+}
+
+.nav #settings_button{
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  position: absolute;
+  right: 5vw;
+  z-index: 1;
+}
+
+.nav .text-center{
+  color: #464646;
+  font-weight: bold;
+  font-size: 44px;
+  font-family: 'Rochester', sans-serif;
+  letter-spacing: 5vw;
+  margin-btop: -3px;
+}
+
+
+/********** jumbotron **********/
+
+ul{
+  list-style-type: none;
+}
+
+.jumbotron{
+  background-color: white;
+  background-size: cover;
+  block-size: 100vh;
+}
+
+.jumbotron .container{
+  position: relative;
+  top: 100px;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-size: 40px;
+  font-family: 'Courgette', cursive;
+}
+
+/********** section containers **********/
+
+#blank {
+  height: 30%;
+}
+
+.container {
+  padding: 0;
+}
+
+.panel {
+  margin-bottom: 0px;
+}
+
+.panel > .panel-heading{
+  background-image: none;
+  color: #464646;
+  font-family: "Rochester", cursive;
+}
+
+.panel > .panel-heading > h2 {
+  font-size: 6vh;
+  margin: 5px;
+}
+
+#music-rec{
+  background-color: #F43E3E;
+}
+
+#music-panel{
+  background-color: rgba(244, 62, 62, .25);
+}
+
+#movie-rec{
+  background-color: #75E2ED;
+}
+
+#movie-panel{
+  background-color: rgba(117, 226, 237, .25);
+}
+
+#shows-rec{
+  background-color: #8CE998;
+}
+
+#shows-panel{
+  background-color: rgba(140, 233, 152, .25);
+}
+
+#personal-rec{
+  background-color: #9B51E0;
+}
+
+#personal-panel{
+  background-color: #ECDDFA;
+}
+
+/********** section content **********/
+
+.content_wrapper {
+  background-color: white;
+  width:100%;
+  clear:both;
+}
+.content_box {
+  width:19%;
+  height: 17vw;
+  float:left;
+  margin-right: 1vw;
+}
+.refresh_box {
+  width: 10vw;
+  height: 10vw;
+  float:right;
+  margin-right: 1vw;
+}
+.content_thumbnail {
+  height:100%;
+  width:100%;
+  object-fit:fill;
+  border-radius: 15%;
+}
+.refresh_thumbnail {
+  height:100%;
+  width:100%;
+  object-fit:fill;
+  float:right;
+  position:relative;
+  top: 3vw;
+  right: 1.75vw;
+}

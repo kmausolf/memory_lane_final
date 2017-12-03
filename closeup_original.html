@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Bootstrap Basic Template -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Basic Template End -->
+
+    <!-- Style references -->
+    <link href="https://fonts.googleapis.com/css?family=Arimo|Courgette" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Reem+Kufi|Rochester|Rouge+Script" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/closeup.css">
+    <link rel="stylesheet" href="lightbox2-master/src/css/lightbox.css">
+
+    <!-- Style References end -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110163522-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-110163522-1');
+    </script>
+  </head>
+  <body>
+     <div id="bg-cover"></div>
+
+    <!-- Nav Bar -------------------------------------------------->
+    <nav class="nav navbar-default navbar-fixed-top">
+      <div id="explore_head" class="container">
+
+        <ul class="pull-left">
+          <li><a href="explore.html"><img id="back_button" src="images/back.png"></a></li>
+        </ul>
+
+        <ul class="text-center">
+          Remember?
+        </ul>
+      </div>
+    </nav>
+    <!-- End Nav Bar -------------------------------------------------->
+
+
+    <!-- Jumbotron ------------------------>
+
+    <div class="jumbotron">
+      <div class="container">
+        <script id="display-template" type="text/x-handlebars-template">
+          <center>
+
+            <!-- identify type of the item displayed -- >
+            <h1>{{type}}</h1>
+            -->
+            
+            <!-- the title of the element -->
+            <h2>{{title}}</h2>
+
+            <!-- path to full size image -->
+            <!--
+            <div id="display-pic">
+              <img src="{{picture}}"/>
+            </div>
+            -->
+
+            <!-- Lightbox image container -->
+            <div class="container-fluid" id="lb-pic">
+              <a href="{{picture}}" data-lightbox="{{title}}" title="">
+                <img src="{{picture}}" class="img-thumbnail" />
+              </a>
+            </div>
+
+            <!-- year of media -->
+            <div id="display-info">
+              <p> {{year}} </p>
+
+              <!-- Description for given content -->
+              <p> {{description}} </p>
+            </div>
+
+          </center>
+        </script>
+        
+        <div id="display-result"></div>
+      </div>
+    </div>
+
+    <!-- End of Jumbotron ------------------------>
+
+    <!-- Bootstrap Basic Template -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="js/handlebars-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/displays.js"></script>
+    <script src="js/closeup.js"></script>
+    <script src="lightbox2-master/src/js/lightbox.js"></script>
+    <!-- Bootstrap Basic Template End -->
+  </body>
+</html>

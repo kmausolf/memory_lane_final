@@ -1,0 +1,56 @@
+.nav #back_button {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 5vw;
+  z-index: 1;
+}
+
+.nav .text-center {
+  color: #7c645b;
+  font-weight: bold;
+  font-size: 28px;
+  font-family: 'Courgette', sans-serif;
+  position: relative;
+  margin-top: 5px;
+  left: -10px;
+}
+
+li {
+  list-style: none; 
+}
+
+body {
+  padding-top: 75px;
+}
+
+.thumbnail img{
+  max-height: 30%;
+  max-width: 30%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+#display-pic {
+  max-height: 300px;
+  width: 100%;
+  overflow: scroll;
+}
+
+#lb-pic {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+#display-info {
+  height: 150px;
+  margin-top: 25px;
+}
+
+#display-pic img {
+  position: relative;
+}
