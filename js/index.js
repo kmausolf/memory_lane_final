@@ -22,12 +22,14 @@
       if (year[0][place] < 9 && year[0]['thousands'] < 2 ) {
         year[0][place] += 1;
       }//end if
+      /*
       else if (place == 'thousands') {
         year[0][place] = 1;
       }//end else if
       else {
         year[0][place] = 0;
       }//end else
+      */
 
     };//end increaseCount
 
@@ -35,9 +37,11 @@
       if( year[0][place] > 0 ){
         year[0][place] -= 1;
       }//end if
+      /*
       else {
         year[0][place] = 9;
       }//end else
+      */
     };//end decreaseCount
 
     this.getValByPlace = function(place) {
@@ -74,7 +78,7 @@
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
 
-  // When the user clicks on the button, open the modal 
+  // When the user clicks on the button, open the modal
   btn.onclick = function() {
     modal.style.display = "block";
   }
@@ -204,5 +208,5 @@ function showPassword() {
     $('.checkbox').removeClass('show');
     $('#login_password').attr('type', 'password');
 
-  }  
+  }
 }
