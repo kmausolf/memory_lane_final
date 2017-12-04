@@ -22,7 +22,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-110163522-1');
     </script>
   </head>
@@ -50,27 +49,27 @@
       <div id="bg-cover"></div>
       <div class="container">
         <script id="display-template" type="text/x-handlebars-template">
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ytsuffix}}"></iframe>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ytsuffix}}"></iframe>
           </div>
-<br>
-<div class="container">
-  <div class="panel-group">
-    <div class="panel panel-default">
-      <a data-toggle="collapse" href="#moreinfo">
-        <div id="more_info" class="panel-heading">
-          <h4 class="panel-title">
-            More Info
-          </h4>
-          </div>
-          </a>
-      <div id="moreinfo" class="panel-collapse collapse">
-        <div class="panel-body">Title: {{title}}</div>
-        <div class="panel-body">Year: {{year}}</div>
-        <div class="panel-body">Description: {{description}}</div>
-          </div>
-          </div>
-          </div>
+          <br>
+          <div class="container">
+            <div class="panel-group">
+              <div class="panel panel-default">
+                <a data-toggle="collapse" href="#moreinfo">
+                  <div id="more_info" class="panel-heading">
+                    <h4 class="panel-title">
+                      More Info
+                    </h4>
+                  </div>
+                </a>
+                <div id="moreinfo" class="panel-collapse collapse">
+                  <div class="panel-body">Title: {{title}}</div>
+                  <div class="panel-body">Year: {{year}}</div>
+                  <div class="panel-body">Description: {{description}}</div>
+                </div>
+              </div>
+            </div>
           </div>
         </script>
         <div id="display-result"></div>

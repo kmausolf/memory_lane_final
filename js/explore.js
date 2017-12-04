@@ -172,7 +172,12 @@ function hidePersonal() {
   var array = JSON.parse(localStorage.getItem('personalArray'));
   var numMemories = array.length;
   var i;
-  for(i = 3; i > -1; ++i) {
+
+
+  console.log("numMemories: " + numMemories);
+  console.log("personalArray: " + localStorage.getItem('personalArray'));
+
+  for(i = 4; i > 0; --i) {
     if(i > numMemories) {
       var content = 'personal_content_' + i;
       document.getElementById(content).classList.add('hide');

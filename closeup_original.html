@@ -22,13 +22,11 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-110163522-1');
     </script>
   </head>
   <body>
      <div id="bg-cover"></div>
-
     <!-- Nav Bar -------------------------------------------------->
     <nav class="nav navbar-default navbar-fixed-top">
       <div id="explore_head" class="container">
@@ -44,10 +42,11 @@
     </nav>
     <!-- End Nav Bar -------------------------------------------------->
 
-
     <!-- Jumbotron ------------------------>
 
     <div class="jumbotron">
+      <div id="background"></div>
+      <div id="background_opacity"></div>
       <div class="container">
         <script id="display-template" type="text/x-handlebars-template">
           <center>
@@ -75,7 +74,7 @@
 
             <!-- year of media -->
             <div id="display-info">
-              <p> {{year}} </p>
+              <h2> {{year}} </h2>
 
               <!-- Description for given content -->
               <p> {{description}} </p>

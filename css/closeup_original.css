@@ -29,6 +29,32 @@ body {
   max-width: 30%;
 }
 
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 110vh;
+  background-image: url("../images/background.jpg");
+  filter: opacity(.5);
+  background-position: 0% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/*
+#background_opacity {
+  position: absolute;
+  min-height: 110vh;
+  min-width: 100vh;
+  background-color: white;
+  z-index: 5;
+  opacity: 1;
+}
+*/
+
 img {
   width: 100%;
   height: auto;
